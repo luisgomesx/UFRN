@@ -28,17 +28,16 @@ dados_requisicao_data_hora = requisicao_data_hora.values
 '''Tratamento dos dados da coluna'''
 #Removendo o '[' que veio no dataset
 dados_requisicao_data_hora_tratado = [ i[1:] for i in dados_requisicao_data_hora ]
-print(dados_requisicao_data_hora_tratado)
+#print(dados_requisicao_data_hora_tratado)
 
 #convertendo em milisegundos para poder realizar algum procedimento matemático
 from datetime import datetime
 
 temp = [w.replace(':', '.').replace('/', '.') for w in dados_requisicao_data_hora_tratado]
-print(temp)
+#print(temp)
 print(len(temp))
 
-print(len(temp))
-
+'''
 def remove_repetidos(lista):
     l = ['annot', 'he', 'ine', 'ain.cpp.51.']
     for i in lista:
@@ -50,20 +49,24 @@ temp2 = remove_repetidos(temp)
 
 print(temp2)
 print(len(temp2))
+'''
 
 '''
 tempo em milisegundos de um dia 86400000
 GERANDO ERRO ABAIXO!!!!!!!!!!!
 tempos com ('he', 'ine', 'annot') dentro dos dados
-'''
 
+'''
 tempos = list()
 for i in temp:
-    x = datetime.strptime(i, '%d.%b.%Y.%H.%M.%S')
-    print(x)
+    try:
+        x = datetime.strptime(i, '%d.%b.%Y.%H.%M.%S')
+        print(x)
+    except:
+        temp.remove(i)
     #tempos.extend(i)
 
-#print(tempos)
+print(len(temp))
     #x = x.timestamp()*1000
     #tempos.extend(x)
 

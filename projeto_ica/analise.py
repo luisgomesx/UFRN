@@ -16,8 +16,8 @@ print(d)
 >>> 0.1111111111111111 # Only the cost for the insertions is kept
 '''
 # You can also visualise the accumulated cost and the shortest path
-import matplotlib.pyplot as plt
-
+#import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 plt.imshow(acc_cost_matrix.T, origin='lower', cmap='gray', interpolation='nearest')
 plt.plot(path[0], path[1], 'w')
 plt.show()
