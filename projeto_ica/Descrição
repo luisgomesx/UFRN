@@ -1,0 +1,6 @@
+Dataset extraído de
+  https://www.kaggle.com/shawon10/web-log-dataset
+  
+Arquivo analise.py retorna o gráfico que compara as duas listas de entrada.
+Arquivo extract.py extrai e manipula os dados do tempo
+Arquivo saidas.py uni analise.py e extract.py para retorna distância normalizada e gráfico de relação entre as entradas.
